@@ -17,7 +17,7 @@ public class LocationService {
             try{
                 return   webClient
                         .get()
-                        .uri("?lat="+latitude+"&lng="+longitude+"&params=windSpeed,waveHeight,airTemperature,cloudCover,precipitation")
+                        .uri("?lat="+latitude+"&lng="+longitude+"&params=windSpeed,waveHeight,airTemperature,cloudCover,precipitation,waterTemperature")
                         .retrieve()
                         .bodyToMono(String.class)
                         .map(body -> {
@@ -28,6 +28,7 @@ public class LocationService {
                             response.setLatitude(latitude);
                             response.setLongitude(longitude);
                             response.setWindSpeed(hourData.getJSONObject("windSpeed").getDouble("noaa"));
+                            response.setWaterTemperature(hourData.getJSONObject("waterTemperature").getDouble("noaa"));
                             if (hourData.has("waveHeight") && hourData.getJSONObject("waveHeight").has("noaa")) {
                                 response.setWaveHeight(hourData.getJSONObject("waveHeight").getDouble("noaa"));
                             } else {

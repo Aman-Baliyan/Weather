@@ -16,5 +16,5 @@ public class WeatherResponse {
     private double cloudCover;
     private double precipitation;
     private String weatherType;
-
+    private double waterTemperature;
 }
