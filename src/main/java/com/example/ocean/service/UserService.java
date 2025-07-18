@@ -24,9 +24,13 @@ public class UserService {
     private JWTService jwtService;
 
 
-    public Users register(Users user){
-      return  userRepo.save(user);
-
+    public String register(Users user){
+      Users getUser = userRepo.findByEmail(user.getEmail());
+      if(getUser == null){
+        userRepo.save(user);
+        return "success";
+      }
+      return "user already exists";
     }
 
     public List<Users> getAlluser() {
@@ -34,11 +38,11 @@ public class UserService {
     }
 
     public String verify(Users users) {
-        Authentication authentication=authManager.authenticate(new UsernamePasswordAuthenticationToken(users.getUsername(),users.getPassword()));
+        Authentication authentication=authManager.authenticate(new UsernamePasswordAuthenticationToken(users.getEmail(),users.getPassword()));
 
 
        if( authentication.isAuthenticated() ){
-           return jwtService.generateToken(users.getUsername());
+           return jwtService.generateToken(users.getEmail());
        }
        return "fail";
 

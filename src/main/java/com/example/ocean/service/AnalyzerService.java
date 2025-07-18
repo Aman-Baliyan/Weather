@@ -114,6 +114,8 @@ public class AnalyzerService {
                            MeteoData data = tuple.getT1();
                            WeatherResponse weatherResponse = tuple.getT2();
                            CombinedResponse cb = new CombinedResponse();
+                           cb.setLongitude(location.getLongitude());
+                           cb.setLatitude(location.getLatitude());
                            List<String> alert = getStrings(data, weatherResponse);
                            cb.setAlerts(alert);
                            cb.setCaution(totalScore(weatherResponse.getWaveHeight(), data.getWind_speed(), data.getWeatherCode()));

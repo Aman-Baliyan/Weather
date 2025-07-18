@@ -11,6 +11,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CombinedResponse {
+     String latitude;
+     String longitude;
      int caution;
      private Current current;
      private Activity activity;
