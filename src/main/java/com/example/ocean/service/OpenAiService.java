@@ -44,6 +44,199 @@ public class OpenAiService {
         - "budget_breakdown": object with keys: travel, stay, food, activities, and total
         
         Ensure the response is only a clean, valid JSON object. Do not include explanations, markdown, or greetings.
+        for Example- {
+                                 "transport_options": {
+                                     "to_destination": {
+                                         {
+                                            "mode": "Flight",
+                                             "estimated_time": "2 hours",
+                                             "cost": "6000 INR"
+                                         },
+                                         {
+                                            "mode": "Train",
+                                             "estimated_time": "2 hours",
+                                             "cost": "6000 INR"
+                                         },
+                                         {
+                                            "mode": "Bus",
+                                             "estimated_time": "2 hours",
+                                             "cost": "6000 INR"
+                                         }
+                                         
+                                     }
+                                  
+                                 },
+                                 "local_transport": [
+                                     "Bike Rentals",
+                                     "Scooter Rentals",
+                                     "Taxis",
+                                     "Local Buses"
+                                 ],
+                                 "nature_spots": [
+                                     "Calangute Beach",
+                                     "Baga Beach",
+                                     "Anjuna Beach",
+                                     "Mandrem Beach",
+                                     "Dudhsagar Waterfalls"
+                                 ],
+                                 "tourist_spots": [
+                                     "Fort Aguada",
+                                     "Basilica of Bom Jesus",
+                                     "Chapora Fort",
+                                     "Anjuna Flea Market",
+                                     "Goan Fish Curry",
+                                     "Prawn Vindaloo",
+                                     "Bebinca"
+                                 ],
+                                 "day_wise_itinerary": [
+                                     {
+                                         "day": "2025-08-01",
+                                         "activities": [
+                                             {
+                                                 "time": "8 AM",
+                                                 "activity": "Flight from Delhi to Goa"
+                                             },
+                                             {
+                                                 "time": "10 AM",
+                                                 "activity": "Check-in at hotel"
+                                             },
+                                             {
+                                                 "time": "12 PM",
+                                                 "activity": "Lunch at local restaurant"
+                                             },
+                                             {
+                                                 "time": "2 PM",
+                                                 "activity": "Visit Calangute Beach"
+                                             },
+                                             {
+                                                 "time": "5 PM",
+                                                 "activity": "Relax at the beach"
+                                             },
+                                             {
+                                                 "time": "7 PM",
+                                                 "activity": "Dinner at beach shack"
+                                             }
+                                         ]
+                                     },
+                                     {
+                                         "day": "2025-08-02",
+                                         "activities": [
+                                             {
+                                                 "time": "8 AM",
+                                                 "activity": "Breakfast at hotel"
+                                             },
+                                             {
+                                                 "time": "10 AM",
+                                                 "activity": "Visit Fort Aguada"
+                                             },
+                                             {
+                                                 "time": "1 PM",
+                                                 "activity": "Lunch nearby"
+                                             },
+                                             {
+                                                 "time": "3 PM",
+                                                 "activity": "Explore Basilica of Bom Jesus"
+                                             },
+                                             {
+                                                 "time": "6 PM",
+                                                 "activity": "Shopping at local market"
+                                             },
+                                             {
+                                                 "time": "8 PM",
+                                                 "activity": "Dinner at local restaurant"
+                                             }
+                                         ]
+                                     },
+                                     {
+                                         "day": "2025-08-03",
+                                         "activities": [
+                                             {
+                                                 "time": "8 AM",
+                                                 "activity": "Breakfast at hotel"
+                                             },
+                                             {
+                                                 "time": "10 AM",
+                                                 "activity": "Visit Anjuna Beach"
+                                             },
+                                             {
+                                                 "time": "1 PM",
+                                                 "activity": "Lunch at beachside cafe"
+                                             },
+                                             {
+                                                 "time": "3 PM",
+                                                 "activity": "Explore Anjuna Flea Market"
+                                             },
+                                             {
+                                                 "time": "6 PM",
+                                                 "activity": "Watch sunset at Anjuna"
+                                             },
+                                             {
+                                                 "time": "8 PM",
+                                                 "activity": "Dinner at local restaurant"
+                                             }
+                                         ]
+                                     },
+                                     {
+                                         "day": "2025-08-04",
+                                         "activities": [
+                                             {
+                                                 "time": "8 AM",
+                                                 "activity": "Breakfast at hotel"
+                                             },
+                                             {
+                                                 "time": "10 AM",
+                                                 "activity": "Day trip to Dudhsagar Waterfalls"
+                                             },
+                                             {
+                                                 "time": "1 PM",
+                                                 "activity": "Lunch on trip"
+                                             },
+                                             {
+                                                 "time": "5 PM",
+                                                 "activity": "Return to hotel"
+                                             },
+                                             {
+                                                 "time": "7 PM",
+                                                 "activity": "Dinner at local restaurant"
+                                             },
+                                             {
+                                                 "time": "9 PM",
+                                                 "activity": "Pack for departure"
+                                             }
+                                         ]
+                                     },
+                                     {
+                                         "day": "2025-08-05",
+                                         "activities": [
+                                             {
+                                                 "time": "8 AM",
+                                                 "activity": "Breakfast at hotel"
+                                             },
+                                             {
+                                                 "time": "10 AM",
+                                                 "activity": "Check-out from hotel"
+                                             },
+                                             {
+                                                 "time": "12 PM",
+                                                 "activity": "Flight from Goa to Delhi"
+                                             }
+                                         ]
+                                     }
+                                 ],
+                                 "return_plan": {
+                                     "time": "12 PM",
+                                     "mode": "Flight"
+                                 },
+                                 "budget_breakdown": {
+                                     "travel": "12000 INR",
+                                     "stay": "10000 INR",
+                                     "food": "5000 INR",
+                                     "activities": "3000 INR",
+                                     "total": "30000 INR"
+                                 }
+                             }
+         
+        Ensure the response is only a clean, valid JSON object. Do not include explanations, markdown, or greetings and the heading names should be same as given in the example
         """, source, destination, startDate, endDate, days);
 
         Map<String, Object> body = Map.of(
